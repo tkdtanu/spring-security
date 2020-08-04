@@ -1,0 +1,21 @@
+# Eclipse IDE
+.project
+.settings
+.classpath
+
+# IntelliJ IDE
+.idea
+
+# Netbeans IDE
+nbactions.xml
+nb-configuration.xml
+nbproject
+
+# Docker Compose
+docker-compose.yml
+
+# Misc
+*.iml
+*.bak
+target
+
