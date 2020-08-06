@@ -91,21 +91,21 @@ Check `configure(HttpSecurity http)` method.<br>
  Steps to verify the Urls
  ------------------------
 1.Open Browser, and try to access http://localhost:7002/admin/welcome. <br>
-![Access Admin Page](/admin_page_access.JPG)
+![Access Admin Page](/admin_page_access.PNG)
 
 2.You will see, you have redirected to login page.<br>
-![Login Page Redirect](/redirected_login_page.JPG)
+![Login Page Redirect](/redirected_login_page.PNG)
 
 3.Here you have to give correct user details which has ADMIN role. Then you will be redirected to Admin welcome page.<br>
  user=`admin` password=`admin`
-![Admin Page Welcome](/admin_page_welcome.JPG)
+![Admin Page Welcome](/admin_page_welcome.PNG) <br>
  Note. --> If you provide a user which doesn't have ADMIN role then, after login you will be redirected to ERROR page with 403 status.<br>
  
 4. You can now access the User Welcome also, because you are a ADMIN user. Try to access http://localhost:7002/user/welcome. <br>
-![User Page Welcome](/user_page_welcome.JPG)
+![User Page Welcome](/user_page_welcome.PNG) <br>
 
 5.Logout. Hit http://localhost:7002/logout to do logout.<br>
-![Logout](/logout.JPG)
+![Logout](/logout.PNG) <br>
 
 6. If you try to access the pages now, you will again redirected to Login page (step 2).<br>
 
