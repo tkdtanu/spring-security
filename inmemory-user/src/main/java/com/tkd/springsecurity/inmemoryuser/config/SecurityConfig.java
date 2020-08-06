@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout();
     }
 
-    @Bean
+/*    @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsService() {
             @Override
@@ -49,5 +49,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             }
 
         };
-    }
+    }*/
 }
