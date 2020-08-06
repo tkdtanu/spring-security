@@ -1,8 +1,8 @@
 # spring-security
 All Projects related to Spring Security
 
-1.[Basic Authentication](/basic-auth)
-2.[InMemory User](/inmemory-user)
+1.[Basic Authentication](/basic-auth) <br>
+2.[InMemory User](/inmemory-user) <br>
 
 
 How Spring Security Works??
