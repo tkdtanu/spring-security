@@ -8,7 +8,7 @@ Approaches
 There are 2 ways we can create users on InMemory.<br>
 I have added both the ways, but commented on of the approach.<br>
 
-Check [SecurityConfig file](/src/main/java/com/tkd/springsecurity/inmemoryuser/config/SecurityConfig.java) for full implementation.
+Check [SecurityConfig file](/inmemory-user/src/main/java/com/tkd/springsecurity/inmemoryuser/config/SecurityConfig.java) for full implementation.
 
 1. Override `configure(AuthenticationManagerBuilder auth)` and use `auth` to build the Users.
 ```
@@ -91,21 +91,21 @@ Check `configure(HttpSecurity http)` method.<br>
  Steps to verify the Urls
  ------------------------
 1.Open Browser, and try to access http://localhost:7002/admin/welcome. <br>
-![Access Admin Page](./admin_page_access.PNG)
+![Access Admin Page](/inmemory-user/admin_page_access.png)
 
 2.You will see, you have redirected to login page.<br>
-![Login Page Redirect](./redirected_login_page.PNG)
+![Login Page Redirect](/inmemory-user/redirected_login_page.png)
 
 3.Here you have to give correct user details which has ADMIN role. Then you will be redirected to Admin welcome page.<br>
  user=`admin` password=`admin`
-![Admin Page Welcome](./admin_page_welcome.PNG) <br>
+![Admin Page Welcome](/inmemory-user/admin_page_welcome.png) <br>
  Note. --> If you provide a user which doesn't have ADMIN role then, after login you will be redirected to ERROR page with 403 status.<br>
  
 4. You can now access the User Welcome also, because you are a ADMIN user. Try to access http://localhost:7002/user/welcome. <br>
-![User Page Welcome](./user_page_welcome.PNG) <br>
+![User Page Welcome](/inmemory-user/user_page_welcome.png) <br>
 
 5.Logout. Hit http://localhost:7002/logout to do logout.<br>
-![Logout](./logout.PNG) <br>
+![Logout](/inmemory-user/logout.png) <br>
 
 6. If you try to access the pages now, you will again redirected to Login page (step 2).<br>
 
