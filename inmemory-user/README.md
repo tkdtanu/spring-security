@@ -111,3 +111,41 @@ Check `configure(HttpSecurity http)` method.<br>
 
 
 Same as above way, you can try using USER role(`user` & `password`).
+
+
+Unit Testing
+--------
+For writing Test We need to first Do login and then Access the Welcome pages by using same `session`.<br>
+**So we have to Keep the session from 1st request of `Login` and then pass it on the next requests**.<br>
+Otherwise Spring will not be identified if the requests and already Authenticated or not.
+
+Check [InMemoryUserApplicationTests.java](/src/test/java/com/tkd/springsecurity/inmemoryuser/InMemoryUserApplicationTests.java)
+
+1. First We do Login and store the `session` to pass over next request.
+```
+MockHttpSession sesssion = ((MockHttpSession) mvc.perform(SecurityMockMvcRequestBuilders
+                .formLogin("/login").user("user").password("password"))
+                .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
+                .andReturn().getRequest().getSession());
+```
+
+2. Access Admin Welcome page
+```
+mvc.perform(MockMvcRequestBuilders.get("/admin/welcome")
+                .contentType(MediaType.APPLICATION_JSON)
+                .session(sesssion))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(mvcResult -> mvcResult.getResponse().getContentAsString().contains("Hey!! Welcome to Admin Page"));
+```
+
+3. Access User Welcome page
+```
+mvc.perform(MockMvcRequestBuilders.get("/user/welcome")
+                .contentType(MediaType.APPLICATION_JSON)
+                .session(sesssion))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(mvcResult -> mvcResult.getResponse().getContentAsString().contains("Hey!! Welcome to User Page"));
+```
+
+If we login with `USER` Role and try to access Admin Welcome page, then we will get `403, "Forbidden"`<br>.
+Check the testcase `testUserLogin_AndThen_AccessWelcomePage_For_Admin_And_User`. 
