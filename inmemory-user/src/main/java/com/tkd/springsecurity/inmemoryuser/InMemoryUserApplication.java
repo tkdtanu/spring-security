@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InmemoryUserApplication {
+public class InMemoryUserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InmemoryUserApplication.class, args);
+		SpringApplication.run(InMemoryUserApplication.class, args);
 	}
 
 }
