@@ -119,7 +119,7 @@ For writing Test We need to first Do login and then Access the Welcome pages by 
 **So we have to Keep the session from 1st request of `Login` and then pass it on the next requests**.<br>
 Otherwise Spring will not be identified if the requests and already Authenticated or not.
 
-Check [InMemoryUserApplicationTests.java](/src/test/java/com/tkd/springsecurity/inmemoryuser/InMemoryUserApplicationTests.java)
+Check [InMemoryUserApplicationTests.java](/inmemoy-user/src/test/java/com/tkd/springsecurity/inmemoryuser/InMemoryUserApplicationTests.java)
 
 1. First We do Login and store the `session` to pass over next request.
 ```
